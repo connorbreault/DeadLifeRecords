@@ -120,7 +120,6 @@
         h1 {
             margin: 0;
             padding: 0.5em;
-            box-shadow: 0px 3px 5px grey;
         }
 
         p {
@@ -142,7 +141,14 @@
 
         #sidebar1 {
             width: 250px;
-            background: darkgray
+            background: darkgray;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebarItem {
+            color: white;
+            text-decoration: none
         }
     </style>
 </head>
@@ -160,24 +166,55 @@
     </div>
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
         <div class="site-name" style="display: flex">
-            <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="75" height="50"></amp-img>
+            <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="225" height="75"></amp-img>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
-                X
+                <p style="color: white; font-size: 25px">X</p>
             </div>
         </div>
-        <ul class="label">
-            <li class="nav-item nav-dropdown">
-
-            </li>
+        <ul>
+            <a href="">
+                <li class="sidebarItem">
+                    <h1>
+                        Merch
+                    </h1>
+                </li>
+            </a>
+            <a href="">
+                <li class="sidebarItem">
+                    <h1>
+                        Bands
+                    </h1>
+                </li>
+            </a>
+            <a href="">
+                <li class="sidebarItem">
+                    <h1>
+                        Services
+                    </h1>
+                </li>
+            </a>
+            <a href="">
+                <li class="sidebarItem">
+                    <h1>
+                        News
+                    </h1>
+                </li>
+            </a>
+            <a href="">
+                <li class="sidebarItem">
+                    <h1>
+                        Contact us
+                    </h1>
+                </li>
+            </a>
         </ul>
+        <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="250" height="100">
+        </amp-img>
     </amp-sidebar>
 
     <a href="./bands/Smack'd_Up.html">
         <h1>link</h1>
     </a>
-    <h1>Dead Life Records</h1>
-
-    <amp-img src="./imgs/Dead_Life_Logo.png" alt="Welcome" height="400" width="800" layout="responsive"></amp-img>
 </body>
 
 </html>
