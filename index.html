@@ -21,12 +21,15 @@
         ]
       }
     </script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-fx-collection"
+        src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both;
         }
 
         @-webkit-keyframes -amp-start {
@@ -78,7 +81,8 @@
                 visibility: visible
             }
         }
-    </style><noscript>
+    </style>
+    <noscript>
         <style amp-boilerplate>
             body {
                 -webkit-animation: none;
@@ -88,16 +92,92 @@
             }
         </style>
     </noscript>
+
+    <style amp-custom>
+        body {
+            width: auto;
+            margin: 0;
+            padding: 0;
+            background: black
+        }
+
+        header {
+            background: transparent;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            z-index: 10;
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            height: 75px;
+            width: 100vw;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0.5em;
+            box-shadow: 0px 3px 5px grey;
+        }
+
+        p {
+            padding: 0.5em;
+            margin: 0.5em;
+        }
+
+        .home-button {
+            margin-top: 8px;
+        }
+
+        .site-name {
+            margin: auto;
+        }
+
+        article {
+            margin-top: 50px;
+        }
+
+        #sidebar1 {
+            width: 250px;
+            background: darkgray
+        }
+    </style>
 </head>
 
 <body>
-    <amp-img src="./imgs/Dead_Life_Logo.png" alt="Welcome" height="400" width="800" layout="responsive"></amp-img>
+    <div style="height: 75px">
+        <header class="headerbar" amp-fx="float-in-top">
+            <div class="site-name">
+                <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="150" height="50"></amp-img>
+            </div>
+            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
+                <p>☰</p>
+            </div>
+        </header>
+    </div>
+    <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
+        <div class="site-name" style="display: flex">
+            <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="75" height="50"></amp-img>
+            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
+                X
+            </div>
+        </div>
+        <ul class="label">
+            <li class="nav-item nav-dropdown">
 
-    <h1>Dead Life Records</h1>
+            </li>
+        </ul>
+    </amp-sidebar>
 
     <a href="./bands/Smack'd_Up.html">
         <h1>link</h1>
     </a>
+    <h1>Dead Life Records</h1>
+
+    <amp-img src="./imgs/Dead_Life_Logo.png" alt="Welcome" height="400" width="800" layout="responsive"></amp-img>
 </body>
 
 </html>
