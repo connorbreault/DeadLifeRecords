@@ -21,6 +21,7 @@
         ]
       }
     </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite">
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-fx-collection"
         src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
@@ -141,14 +142,15 @@
 
         #sidebar1 {
             width: 250px;
-            background: darkgray;
+            background: #4c4c4c;
             height: 100vh;
             overflow: hidden;
         }
 
         .sidebarItem {
             color: white;
-            text-decoration: none
+            text-decoration: none;
+            font-family: 'Special Elite', cursive;
         }
     </style>
 </head>
@@ -166,50 +168,40 @@
     </div>
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
         <div class="site-name" style="display: flex">
-            <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="225" height="75"></amp-img>
+            <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="225" height="75" style="margin: 10px">
+            </amp-img>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
-                <p style="color: white; font-size: 25px">X</p>
+                <p style="color: white; font-size: 30px; font-family: 'Special Elite', cursive;">X</p>
             </div>
         </div>
-        <ul>
-            <a href="">
-                <li class="sidebarItem">
-                    <h1>
-                        Merch
-                    </h1>
-                </li>
+        <div class="sidebarList" style="margin: 25px auto; text-align: center">
+            <a href="" class="sidebarItem">
+                <h1>
+                    Merch
+                </h1>
             </a>
-            <a href="">
-                <li class="sidebarItem">
-                    <h1>
-                        Bands
-                    </h1>
-                </li>
+            <a href="" class="sidebarItem">
+                <h1>
+                    Bands
+                </h1>
             </a>
-            <a href="">
-                <li class="sidebarItem">
-                    <h1>
-                        Services
-                    </h1>
-                </li>
+            <a href="" class="sidebarItem">
+                <h1>
+                    Services
+                </h1>
             </a>
-            <a href="">
-                <li class="sidebarItem">
-                    <h1>
-                        News
-                    </h1>
-                </li>
+            <a href="" class="sidebarItem">
+                <h1>
+                    News
+                </h1>
             </a>
-            <a href="">
-                <li class="sidebarItem">
-                    <h1>
-                        Contact us
-                    </h1>
-                </li>
+            <a href="" class="sidebarItem">
+                <h1>
+                    Contact us
+                </h1>
             </a>
-        </ul>
-        <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="250" height="100">
-        </amp-img>
+        </div>
+        <!-- <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="250" height="100"></amp-img> -->
     </amp-sidebar>
 
     <a href="./bands/Smack'd_Up.html">
