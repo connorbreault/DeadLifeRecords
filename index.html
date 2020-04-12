@@ -161,7 +161,7 @@
 
         @media only screen and (max-width: 771px) {
             #desktopHeader {
-                display: inherit
+                display: none
             }
         }
     </style>
@@ -215,13 +215,18 @@
         </div>
     </amp-sidebar>
 
-    <div style="height: 75px" id="desktopHeader">
+    <div style="height: 75px;" id="desktopHeader">
         <header class="headerbar" amp-fx="float-in-top">
+            <div>
+                <a href="">Merch</a>
+                <a href="">Bands</a>
+            </div>
             <div>
                 <amp-img class="home-button" src="./imgs/headEDIT.png" width="65" height="50"></amp-img>
             </div>
-            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
-                <p>X</p>
+            <div>
+                <a href="">News</a>
+                <a href="">Contact</a>
             </div>
         </header>
     </div>
