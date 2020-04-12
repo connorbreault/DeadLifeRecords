@@ -99,7 +99,7 @@
             width: auto;
             margin: 0;
             padding: 0;
-            background: black
+            background: url("./imgs/mainBG.jpg")
         }
 
         header {
@@ -142,7 +142,7 @@
 
         #sidebar1 {
             width: 250px;
-            background: #4c4c4c;
+            background: url("./imgs/sidenavBG.jpg");
             height: 100vh;
             overflow: hidden;
         }
@@ -152,11 +152,23 @@
             text-decoration: none;
             font-family: 'Special Elite', cursive;
         }
+
+        @media only screen and (min-width: 770px) {
+            #mobileHeader {
+                display: none
+            }
+        }
+
+        @media only screen and (max-width: 771px) {
+            #desktopHeader {
+                display: inherit
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div style="height: 75px">
+    <div style="height: 75px" id="mobileHeader">
         <header class="headerbar" amp-fx="float-in-top">
             <div class="site-name">
                 <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="150" height="50"></amp-img>
@@ -167,10 +179,10 @@
         </header>
     </div>
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
-        <div class="site-name" style="display: flex">
-            <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="225" height="75" style="margin: 10px">
+        <div class="site-name" style="display: flex; padding:'10px'">
+            <amp-img class="home-button" src="./imgs/headEDIT.png" width="90" height="75" style="margin: 10px">
             </amp-img>
-            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
+            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle" style="margin-left: 60px">
                 <p style="color: white; font-size: 30px; font-family: 'Special Elite', cursive;">X</p>
             </div>
         </div>
@@ -201,8 +213,18 @@
                 </h1>
             </a>
         </div>
-        <!-- <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="250" height="100"></amp-img> -->
     </amp-sidebar>
+
+    <div style="height: 75px" id="desktopHeader">
+        <header class="headerbar" amp-fx="float-in-top">
+            <div class="site-name">
+                <amp-img class="home-button" src="./imgs/Dead_Life_Logo.png" width="150" height="50"></amp-img>
+            </div>
+            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
+                <p>X</p>
+            </div>
+        </header>
+    </div>
 
     <a href="./bands/Smack'd_Up.html">
         <h1>link</h1>
