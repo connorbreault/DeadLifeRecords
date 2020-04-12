@@ -113,7 +113,8 @@
             position: fixed;
             overflow: hidden;
             top: 0;
-            height: 75px;
+            padding: 5px;
+            height: 85px;
             width: 100vw;
             align-items: center;
         }
@@ -158,6 +159,10 @@
             color: red;
         }
 
+        .headIcon:hover {
+            filter: sepia(100%) saturate(400%) brightness(70%) hue-rotate(-60deg);
+        }
+
         @media only screen and (min-width: 770px) {
             #mobileHeader {
                 display: none
@@ -176,8 +181,11 @@
     <!-- MOBILE NAVBAR -->
     <div style="height: 75px" id="mobileHeader">
         <header class="headerbar" amp-fx="float-in-top">
-            <div class="site-name">
-                <amp-img style="text-shadow: 5px 5px gray;" src="./imgs/headEDIT.png" width="50" height="65"></amp-img>
+            <div style="margin: 10px 75px 0px 0px">
+                <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="./imgs/headEDIT.png" width="70"
+                    height="70">
+                    <p placeholder> </p>
+                </amp-img>
             </div>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
                 <p>☰</p>
@@ -187,9 +195,10 @@
 
     <!-- SIDENAV -->
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
-        <div class="site-name" style="display: flex; padding:'10px'">
-            <amp-img style="text-shadow: 5px 5px gray;" src="./imgs/headEDIT.png" width="90" height="75"
-                style="margin: 10px">
+        <div class="site-name" style="display: flex; padding:'10px';">
+            <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="./imgs/headEDIT.png"
+                width="70" height="70">
+                <p placeholder> </p>
             </amp-img>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle" style="margin-left: 60px">
                 <p style="color: white; font-size: 30px; font-family: 'Special Elite', cursive;">X</p>
@@ -236,7 +245,9 @@
                 " href="">Bands</a>
             </div>
             <div>
-                <amp-img class="home-button" src="./imgs/headEDIT.png" width="75" height="65"></amp-img>
+                <amp-img class="home-button headIcon" src="./imgs/headEDIT.png" width="75" height="65">
+                    <p placeholder> </p>
+                </amp-img>
             </div>
             <div>
                 <a class="navbarItem
