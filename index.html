@@ -163,12 +163,39 @@
             filter: sepia(100%) saturate(400%) brightness(70%) hue-rotate(-60deg);
         }
 
+
+        .headImgContainer {
+            width: 60%;
+            margin: 50px auto
+        }
+
+        .mainContainer {
+            width: 95%;
+            margin: -75px auto;
+            background: gray;
+            border: black solid 2px;
+            border-radius: 25px
+        }
+
+
+        /* ===== DESKTOP QUERY ===== */
         @media only screen and (min-width: 770px) {
             #mobileHeader {
                 display: none
             }
+
+            .headImgContainer {
+                width: 75%;
+                margin: 70px auto
+            }
+
+            .mainContainer {
+                width: 75%;
+                margin: -125px auto;
+            }
         }
 
+        /* ===== MOBILE QUEERY ===== */
         @media only screen and (max-width: 771px) {
             #desktopHeader {
                 display: none
@@ -188,7 +215,7 @@
                 </amp-img>
             </div>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
-                <p>☰</p>
+                <h2>☰</h2>
             </div>
         </header>
     </div>
@@ -260,9 +287,16 @@
         </header>
     </div>
 
-    <a href="./bands/Smack'd_Up.html">
-        <h1>link</h1>
-    </a>
+    <!-- HEADER IMG -->
+    <div class="headImgContainer">
+        <amp-img src="./imgs/deadLifeLogo.png" width="300" height="150" layout="responsive">
+    </div>
+
+    <div class="mainContainer">
+        <a href="./bands/Smack'd_Up.html">
+            <h1>link</h1>
+        </a>
+    </div>
 </body>
 
 </html>
