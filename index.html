@@ -162,7 +162,7 @@
 
 
         .headImgContainer {
-            width: 60%;
+            width: 75%;
             margin: 50px auto
         }
 
@@ -174,6 +174,12 @@
             border-radius: 25px
         }
 
+        .newsCarousel {
+            width: 80%;
+            margin: auto;
+            border: 2px black solid
+        }
+
 
         /* ===== DESKTOP QUERY ===== */
         @media only screen and (min-width: 770px) {
@@ -182,13 +188,17 @@
             }
 
             .headImgContainer {
-                width: 75%;
+                width: 60%;
                 margin: 70px auto
             }
 
             .mainContainer {
                 width: 75%;
                 margin: -125px auto;
+            }
+
+            .newsCarousel {
+                width: 50%
             }
         }
 
@@ -290,8 +300,9 @@
     </div>
 
     <div class="mainContainer">
-        <h1>News</h1>
-        <div style="width: 50%; margin: auto; border: 2px black solid">
+        <h1>Welcome to Dead Life Records</h1>
+        <h2>News</h2>
+        <div class="newsCarousel">
             <amp-carousel height="300" layout="fixed-height" type="slides" loop>
                 <amp-img src="./imgs/deadLifeLogo.png" width="400" height="300" alt="a sample image"></amp-img>
                 <amp-img src="./imgs/deadLifeLogo.png" width="400" height="300" alt="another sample image"></amp-img>
