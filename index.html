@@ -21,7 +21,7 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite|Satisfy|Bangers">
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-fx-collection"
         src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
@@ -171,11 +171,21 @@
         }
 
         .mainContainer {
-            width: 95%;
+            width: 85%;
             margin: -75px auto;
             background: gray;
             border: black solid 2px;
             border-radius: 25px
+        }
+
+        #mainHeader {
+            font-size: 45px;
+            text-align: center;
+            color: white;
+            margin: 40px auto;
+            font-family: 'Bangers', cursive;
+            text-decoration: underline;
+            letter-spacing: 2px
         }
 
         .newsCarousel {
@@ -203,6 +213,10 @@
 
             .newsCarousel {
                 width: 50%
+            }
+
+            #mainHeader {
+                font-size: 55px
             }
         }
 
@@ -304,8 +318,9 @@
     </div>
 
     <div class="mainContainer">
-        <h1>Welcome to Dead Life Records</h1>
-        <h2>News</h2>
+        <h1 id="mainHeader">
+            Welcome to Dead
+            Life Records</h1>
         <div class="newsCarousel">
             <amp-carousel height="300" layout="fixed-height" type="slides" loop>
                 <amp-img src="./imgs/deadLifeLogo.png" width="400" height="300" alt="a sample image"></amp-img>
