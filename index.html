@@ -181,7 +181,7 @@
         #mainHeader {
             font-size: 45px;
             text-align: center;
-            color: white;
+            color: #efefef;
             margin: 40px auto;
             font-family: 'Bangers', cursive;
             text-decoration: underline;
@@ -197,7 +197,7 @@
 
         #midContainer {
             text-align: center;
-            color: white
+            color: #efefef
         }
 
         .newsDate {
@@ -207,10 +207,29 @@
         }
 
         #releasesContianer {
-            border: 1px white solid;
+            border: 1px #efefef solid;
             width: 85%;
             margin: 20px auto;
             border-radius: 25px
+        }
+
+        .release {
+            width: fit-content;
+            margin: auto;
+            padding: 10px;
+            border-radius: 25px;
+            color: white
+        }
+
+        .release:hover {
+            -webkit-box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.75);
+            box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.75);
+        }
+
+        .releaseText {
+            color: #efefef;
+            text-decoration: underline #efefef
         }
 
 
@@ -238,6 +257,16 @@
                 font-size: 55px
             }
 
+            #midContainer {
+                display: flex
+            }
+
+            #newsContainer {
+                width: 60%;
+                margin: 50px auto;
+                font-size: 25px
+            }
+
             #releasesContianer {
                 border: 1px white solid;
                 width: 40%;
@@ -249,6 +278,11 @@
             #desktopHeader {
                 display: none
             }
+
+            #newsContainer {
+                font-size: 20px
+            }
+
         }
     </style>
 </head>
@@ -402,19 +436,25 @@
             <div id="releasesContianer">
                 <h2 style="font-family: 'Bangers', cursive; text-decoration: underline">Releases</h2>
                 <div class="release">
-                    <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
-                    </amp-img>
-                    <h3>Smack'd Up - Death Reign</h3>
+                    <a href="">
+                        <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                        </amp-img>
+                        <h3 class="releaseText">Smack'd Up - Death Reign</h3>
+                    </a>
                 </div>
                 <div class="release">
-                    <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
-                    </amp-img>
-                    <h3>Smack'd Up - Death Reign</h3>
+                    <a href="">
+                        <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                        </amp-img>
+                        <h3 class="releaseText">Smack'd Up - Death Reign</h3>
+                    </a>
                 </div>
                 <div class="release">
-                    <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
-                    </amp-img>
-                    <h3>Smack'd Up - Death Reign</h3>
+                    <a href="">
+                        <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                        </amp-img>
+                        <h3 class="releaseText">Smack'd Up - Death Reign</h3>
+                    </a>
                 </div>
             </div>
         </div>
