@@ -27,6 +27,8 @@
     <script async custom-element="amp-fx-collection"
         src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-social-share"
+        src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -97,6 +99,28 @@
     </noscript>
 
     <style amp-custom>
+        :root {
+            --color-primary: black;
+            --color-text-light: #fff;
+        }
+
+        /* a custom sharing icon */
+        amp-social-share.custom-style {
+            background-color: #008080;
+            background-image: url('https://instagram.com/deadliferecords916?igshid=6uqx37fib4lv');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        /* blue icons with rounded corners  */
+        amp-social-share.rounded {
+            border-radius: 50%;
+            background-size: 60%;
+            color: var(--color-text-light);
+            background-color: var(--color-primary);
+        }
+
         body {
             width: auto;
             margin: 0;
@@ -243,6 +267,13 @@
             color: red;
         }
 
+        #midNav {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 25px auto
+        }
+
 
         /* ===== DESKTOP QUERY ===== */
         @media only screen and (min-width: 770px) {
@@ -272,6 +303,10 @@
                 display: flex;
                 width: 90%;
                 margin: auto
+            }
+
+            #midNav {
+                display: none
             }
 
             #newsContainer {
@@ -419,7 +454,7 @@
         </div>
 
         <!-- MIDNAV -->
-        <div style="display: flex; margin: auto">
+        <div id="midNav">
             <div>
                 <a class=" navbarItem " href="">
                     <h2>Merch</h2>
@@ -462,15 +497,14 @@
                     expedita
                     quas eligendi.
                 </p>
-                <p class="newsDate">4/20/69</p>
-                <p style="font-family: 'Sriracha', cursive;">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex maiores dignissimos aut itaque
-                    numquam
-                    cum
-                    obcaecati eum quo? Sint velit asperiores similique illo architecto facilis temporibus doloribus
-                    expedita
-                    quas eligendi.
-                </p>
+                <div>
+                    <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="50"
+                        height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
+                    </amp-social-share>
+                    <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
+                    <amp-img src="./imgs/iglogo.png" width="50" height="50" alt="a sample image"
+                        style="background: black; border-radius: 25px"></amp-img>
+                </div>
             </div>
 
             <div id="releasesContianer">
