@@ -29,6 +29,7 @@
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-social-share"
         src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -125,7 +126,7 @@
             width: auto;
             margin: 0;
             padding: 0;
-            background: url("./imgs/mainBG.jpg")
+            background: url("/images/mainBG.jpg")
         }
 
         /* NAVBAR */
@@ -180,7 +181,7 @@
         /* SIDEBAR */
         #sidebar1 {
             width: 250px;
-            background: url("./imgs/sidenavBG.jpg");
+            background: url("/images/sidenavBG.jpg");
             height: 100vh;
             overflow: hidden;
         }
@@ -311,7 +312,7 @@
                 font-size: 25px
             }
 
-            #releasesContianer {
+            #spotify_In #releasesContianer {
                 border: 1px white solid;
                 width: 40%;
             }
@@ -344,7 +345,7 @@
     <div style="height: 75px" id="mobileHeader">
         <header class="headerbar" amp-fx="float-in-top">
             <div style="margin: 10px 75px 0px 0px">
-                <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="./imgs/headEDIT.png" width="70"
+                <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="/images/headEDIT.png" width="70"
                     height="70">
                     <p placeholder> </p>
                 </amp-img>
@@ -358,7 +359,7 @@
     <!-- SIDENAV -->
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
         <div class="site-name" style="display: flex; padding:'10px';">
-            <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="./imgs/headEDIT.png"
+            <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="/images/headEDIT.png"
                 width="70" height="70">
                 <p placeholder> </p>
             </amp-img>
@@ -398,7 +399,7 @@
                     height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
                 </amp-social-share>
                 <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
-                <amp-img src="./imgs/iglogo.png" width="50" height="50" alt="a sample image"
+                <amp-img src="/images/iglogo.png" width="50" height="50" alt="a sample image"
                     style="background: black; border-radius: 25px"></amp-img>
             </div>
         </div>
@@ -416,7 +417,7 @@
                 " href="">Bands</a>
             </div>
             <div>
-                <amp-img class="home-button headIcon" src="./imgs/headEDIT.png" width="75" height="65">
+                <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65">
                     <p placeholder> </p>
                 </amp-img>
             </div>
@@ -433,7 +434,7 @@
 
     <!-- HEADER IMG -->
     <div class="headImgContainer">
-        <amp-img src="./imgs/deadLifeLogo.png" width="300" height="150" layout="responsive">
+        <amp-img src="/images/deadLifeLogo.png" width="1600" height="550" layout="responsive">
     </div>
 
     <!-- MAIN CONTENT -->
@@ -447,13 +448,16 @@
         <!-- NEWS CAROUSEL -->
         <div class="newsCarousel">
             <amp-carousel height="300" width="400" layout="responsive" type="slides" loop>
-                <amp-img src="./imgs/promo_DeathReign.jpg" width="400" height="350" alt="a sample image"
+                <amp-img src="/images/promoCarousel/promo_DeathReign.jpg" width="400" height="350" alt="a sample image"
                     layout="responsive"></amp-img>
-                <amp-img src="./imgs/promo_DeathReign.jpg" width="400" height="350" alt="another sample image"
-                    layout="responsive">
+                <amp-img src="/images/promoCarousel/promo_Petroglyphs.jpg" width="400" height="350"
+                    alt="another sample image" layout="responsive">
                 </amp-img>
-                <amp-img src="./imgs/promo_DeathReign.jpg" width="400" height="350" alt="and another sample image"
-                    layout="responsive">
+                <amp-img src="/images/promoCarousel/promo_Facebook.png" width="400" height="350"
+                    alt="and another sample image" layout="responsive">
+                </amp-img>
+                <amp-img src="/images/promoCarousel/promo_Insta.png" width="400" height="350"
+                    alt="and another sample image" layout="responsive">
                 </amp-img>
             </amp-carousel>
         </div>
@@ -466,7 +470,7 @@
                 </a>
             </div>
             <div>
-                <amp-img class=" home-button headIcon" src="./imgs/headEDIT.png" width="75" height="65">
+                <amp-img class=" home-button headIcon" src="/images/headEDIT.png" width="75" height="65">
                     <p placeholder> </p>
                 </amp-img>
             </div>
@@ -479,9 +483,19 @@
             </header>
         </div>
 
-        <!-- NEWS -->
+        <!-- NEWS CONTAINER -->
         <div id="midContainer">
             <div id="newsContainer">
+
+                <!-- SPOTIFY -->
+                <div>
+                    <amp-iframe id="spotify_Iframe" src="https://open.spotify.com/embed/playlist/6KYkPkY1QxR6cn3W5z0lPR"
+                        width="250px" height="300" frameborder="1" sandbox="allow-scripts allow-same-origin"
+                        allow="encrypted-media">
+                    </amp-iframe>
+                </div>
+
+                <!-- NEWS SECTION -->
                 <h2 style="font-family: 'Audiowide', cursive; text-decoration: underline; letter-spacing: 2px">News
                 </h2>
                 <p class="newsDate">4/20/2020</p>
@@ -510,33 +524,34 @@
                         height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
                     </amp-social-share>
                     <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
-                    <amp-img src="./imgs/iglogo.png" width="50" height="50" alt="a sample image"
+                    <amp-img src="/images/iglogo.png" width="50" height="50" alt="a sample image"
                         style="background: black; border-radius: 25px"></amp-img>
                 </div>
 
             </div>
 
+            <!-- RELEASES -->
             <div id="releasesContianer">
                 <h2
                     style="font-family: 'Audiowide', cursive; text-decoration: underline; font-size: 37.5px; letter-spacing: 2px; margin-top: 45px;">
                     Releases</h2>
                 <div class="release">
                     <a href="">
-                        <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                        <amp-img src="/images/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
                         </amp-img>
                         <h3 class="releaseText">Smack'd Up - Death Reign</h3>
                     </a>
                 </div>
                 <div class="release">
                     <a href="">
-                        <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                        <amp-img src="/images/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
                         </amp-img>
                         <h3 class="releaseText">Smack'd Up - Death Reign</h3>
                     </a>
                 </div>
                 <div class="release">
                     <a href="">
-                        <amp-img src="./imgs/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                        <amp-img src="/images/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
                         </amp-img>
                         <h3 class="releaseText">Smack'd Up - Death Reign</h3>
                     </a>
