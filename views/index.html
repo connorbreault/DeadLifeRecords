@@ -199,7 +199,7 @@
         /* MAIN CONTAINER */
         .mainContainer {
             width: 85%;
-            margin: -75px auto;
+            margin: -75px auto 20px auto;
             background: gray;
             border: black solid 2px;
             border-radius: 25px
@@ -254,9 +254,9 @@
         }
 
         .release:hover {
-            -webkit-box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.75);
-            -moz-box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.75);
-            box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 0px 0px 44px 6px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 44px 6px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 44px 6px rgba(0, 0, 0, 0.75);
         }
 
         .releaseText {
@@ -275,6 +275,18 @@
             margin: 25px auto
         }
 
+        #spotifyIframe {
+            border: black 2px solid
+        }
+
+        #footer {
+            background: #3b3c3c;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-family: 'Special Elite', cursive;
+        }
+
 
         /* ===== DESKTOP QUERY ===== */
         @media only screen and (min-width: 770px) {
@@ -289,7 +301,7 @@
 
             .mainContainer {
                 width: 75%;
-                margin: -125px auto;
+                margin: -125px auto 45px auto;
             }
 
             .newsCarousel {
@@ -312,7 +324,12 @@
                 font-size: 25px
             }
 
-            #spotify_In #releasesContianer {
+            #spotifyIframe {
+                width: 500px;
+                height: 300px
+            }
+
+            #releasesContianer {
                 border: 1px white solid;
                 width: 40%;
             }
@@ -326,6 +343,10 @@
         @media only screen and (max-width: 771px) {
             #desktopHeader {
                 display: none
+            }
+
+            #headImg {
+                height: 125px
             }
 
             #newsContainer {
@@ -346,7 +367,7 @@
         <header class="headerbar" amp-fx="float-in-top">
             <div style="margin: 10px 75px 0px 0px">
                 <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="/images/headEDIT.png" width="70"
-                    height="70">
+                    height="70" alt="Dead Life Icon">
                     <p placeholder> </p>
                 </amp-img>
             </div>
@@ -360,7 +381,7 @@
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
         <div class="site-name" style="display: flex; padding:'10px';">
             <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="/images/headEDIT.png"
-                width="70" height="70">
+                width="70" height="70" alt="Dead Life Icon">
                 <p placeholder> </p>
             </amp-img>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle" style="margin-left: 60px">
@@ -399,7 +420,7 @@
                     height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
                 </amp-social-share>
                 <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
-                <amp-img src="/images/iglogo.png" width="50" height="50" alt="a sample image"
+                <amp-img src="/images/iglogo.png" width="50" height="50" alt="Instagram Icon"
                     style="background: black; border-radius: 25px"></amp-img>
             </div>
         </div>
@@ -417,7 +438,8 @@
                 " href="">Bands</a>
             </div>
             <div>
-                <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65">
+                <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65"
+                    alt="Dead Life Icon">
                     <p placeholder> </p>
                 </amp-img>
             </div>
@@ -434,7 +456,10 @@
 
     <!-- HEADER IMG -->
     <div class="headImgContainer">
-        <amp-img src="/images/deadLifeLogo.png" width="1600" height="550" layout="responsive">
+        <amp-img id="headImg" src="/images/deadLifeLogo.png" width="1600" height="550" layout="responsive"
+            alt="Dead Life Logo">
+            <p placeholder> </p>
+        </amp-img>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -448,16 +473,16 @@
         <!-- NEWS CAROUSEL -->
         <div class="newsCarousel">
             <amp-carousel height="300" width="400" layout="responsive" type="slides" loop>
-                <amp-img src="/images/promoCarousel/promo_DeathReign.jpg" width="400" height="350" alt="a sample image"
-                    layout="responsive"></amp-img>
+                <amp-img src="/images/promoCarousel/promo_DeathReign.jpg" width="400" height="350"
+                    alt="Death Reign Promo" layout="responsive"></amp-img>
                 <amp-img src="/images/promoCarousel/promo_Petroglyphs.jpg" width="400" height="350"
-                    alt="another sample image" layout="responsive">
+                    alt="Petroglyphs promo" layout="responsive">
                 </amp-img>
-                <amp-img src="/images/promoCarousel/promo_Facebook.png" width="400" height="350"
-                    alt="and another sample image" layout="responsive">
+                <amp-img src="/images/promoCarousel/promo_Facebook.png" width="400" height="350" alt="Dead Life promo"
+                    layout="responsive">
                 </amp-img>
-                <amp-img src="/images/promoCarousel/promo_Insta.png" width="400" height="350"
-                    alt="and another sample image" layout="responsive">
+                <amp-img src="/images/promoCarousel/promo_Insta.png" width="400" height="350" alt="Dead Life Promo"
+                    layout="responsive">
                 </amp-img>
             </amp-carousel>
         </div>
@@ -489,9 +514,9 @@
 
                 <!-- SPOTIFY -->
                 <div>
-                    <amp-iframe id="spotify_Iframe" src="https://open.spotify.com/embed/playlist/6KYkPkY1QxR6cn3W5z0lPR"
-                        width="250px" height="300" frameborder="1" sandbox="allow-scripts allow-same-origin"
-                        allow="encrypted-media">
+                    <amp-iframe id="spotifyIframe" src="https://open.spotify.com/embed/playlist/6KYkPkY1QxR6cn3W5z0lPR"
+                        width="250px" height="300px" layout="responsive" frameborder="0"
+                        sandbox="allow-scripts allow-same-origin" allow="encrypted-media" style="margin: auto">
                     </amp-iframe>
                 </div>
 
@@ -536,29 +561,39 @@
                     style="font-family: 'Audiowide', cursive; text-decoration: underline; font-size: 37.5px; letter-spacing: 2px; margin-top: 45px;">
                     Releases</h2>
                 <div class="release">
-                    <a href="">
-                        <amp-img src="/images/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                    <a
+                        href="https://www.youtube.com/watch?v=vHdCMrrDWU0&feature=youtu.be&fbclid=IwAR1xuL58wWFJCCp_YuKStnRNWap2X1Y9CY8JF_ovkZ92FcGeOm9n6VvgdHo">
+                        <amp-img src="/images/Bands/SmackdUp/SmackdUpDeathReign.jpg" width="200" height="200"
+                            alt="a sample image">
                         </amp-img>
                         <h3 class="releaseText">Smack'd Up - Death Reign</h3>
                     </a>
                 </div>
                 <div class="release">
-                    <a href="">
-                        <amp-img src="/images/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                    <a href="https://www.youtube.com/watch?v=ae-X0eqn5WU">
+                        <amp-img src="/images/Bands/Petroglyphs/petroglyphsAscension.jpg" width="200" height="200"
+                            alt="a sample image">
                         </amp-img>
-                        <h3 class="releaseText">Smack'd Up - Death Reign</h3>
+                        <h3 class="releaseText">Petroglyphs - Ascension</h3>
                     </a>
                 </div>
                 <div class="release">
-                    <a href="">
-                        <amp-img src="/images/SmackdUp_DeathReign.jpg" width="200" height="200" alt="a sample image">
+                    <a
+                        href="https://infinitointorqueo.bandcamp.com/?fbclid=IwAR3FLbCBF-i_iIj7x5jjsaIublwI5p4-R3tiLkF8PZAtFk2YT9nRoMEWv4U">
+                        <amp-img src="/images/Bands/Infinito/infinitoLegends.jpg" width="200" height="200"
+                            alt="a sample image">
                         </amp-img>
-                        <h3 class="releaseText">Smack'd Up - Death Reign</h3>
+                        <h3 class="releaseText">Infinito In Torqueo - Legends of The Forsaken</h3>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <footer id="footer">
+        <p>Copyright 2020</p>
+        <p>Dead Life Records</p>
+    </footer>
 </body>
 
 </html>
