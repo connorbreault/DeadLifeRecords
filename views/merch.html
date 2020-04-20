@@ -205,80 +205,6 @@
             border-radius: 25px
         }
 
-        #mainHeader {
-            font-size: 35px;
-            text-align: center;
-            color: #efefef;
-            margin: 40px auto;
-            font-family: 'Audiowide', cursive;
-            text-decoration: underline;
-            letter-spacing: 2px
-        }
-
-        .newsCarousel {
-            width: 80%;
-            margin: auto;
-            border: 2px black solid;
-            background: rgb(45, 45, 45)
-        }
-
-
-        /* MID CONTAINER */
-        #midContainer {
-            text-align: center;
-            color: #efefef
-        }
-
-        /* NEWS SIDE */
-        .newsDate {
-            text-decoration: underline;
-            font-family: 'Special Elite', cursive;
-            color: #252525
-        }
-
-        /* RELEASE SIDE */
-        #releasesContianer {
-            border: 1px #efefef solid;
-            width: 85%;
-            margin: 20px auto;
-            border-radius: 25px;
-            padding: 15px
-        }
-
-        .release {
-            width: fit-content;
-            margin: 40px auto;
-            border-radius: 25px;
-            font-family: 'Audiowide', cursive;
-            letter-spacing: 1px
-        }
-
-        .release:hover {
-            -webkit-box-shadow: 0px 0px 44px 6px rgba(0, 0, 0, 0.75);
-            -moz-box-shadow: 0px 0px 44px 6px rgba(0, 0, 0, 0.75);
-            box-shadow: 0px 0px 44px 6px rgba(0, 0, 0, 0.75);
-        }
-
-        .releaseText {
-            color: #efefef;
-            text-decoration: underline #efefef
-        }
-
-        .releaseText:hover {
-            color: red;
-        }
-
-        #midNav {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-            margin: 25px auto
-        }
-
-        #spotifyIframe {
-            border: black 2px solid
-        }
-
         #footer {
             background: #3b3c3c;
             display: flex;
@@ -303,40 +229,6 @@
                 width: 75%;
                 margin: -125px auto 45px auto;
             }
-
-            .newsCarousel {
-                width: 80%;
-            }
-
-            #midContainer {
-                display: flex;
-                width: 90%;
-                margin: auto
-            }
-
-            #midNav {
-                display: none
-            }
-
-            #newsContainer {
-                width: 60%;
-                margin: 50px auto;
-                font-size: 25px
-            }
-
-            #spotifyIframe {
-                width: 500px;
-                height: 300px
-            }
-
-            #releasesContianer {
-                border: 1px white solid;
-                width: 40%;
-            }
-
-            .release {
-                margin: 75px auto;
-            }
         }
 
         /* ===== MOBILE QUEERY ===== */
@@ -347,14 +239,6 @@
 
             #headImg {
                 height: 125px
-            }
-
-            #newsContainer {
-                font-size: 20px
-            }
-
-            #releasesContianer {
-                width: 75%
             }
 
         }
@@ -389,9 +273,9 @@
             </div>
         </div>
         <div class="sidebarList" style="margin: 25px auto; text-align: center">
-            <a href="/merch" class="navbarItem sidenavItem">
+            <a href="/" class="navbarItem sidenavItem">
                 <p>
-                    Merch
+                    Home
                 </p>
             </a>
             <a href="/bands" class="navbarItem sidenavItem">
@@ -424,13 +308,12 @@
     <!-- DESKTOP NAVBAR -->
     <div style="height: 75px;" id="desktopHeader">
         <header class="headerbar" amp-fx="float-in-top">
+
             <div>
-                <a class="navbarItem
-                " href="/merch">Merch</a>
+                <a class="navbarItem" href="/">Home</a>
             </div>
             <div>
-                <a class="navbarItem
-                " href="/bands">Bands</a>
+                <a class="navbarItem" href="/bands">Bands</a>
             </div>
             <div>
                 <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65"
@@ -459,130 +342,7 @@
 
     <!-- MAIN CONTENT -->
     <div class="mainContainer">
-
-        <!-- HEADER -->
-        <h1 id="mainHeader">
-            Welcome to Dead
-            Life Records</h1>
-
-        <!-- NEWS CAROUSEL -->
-        <div class="newsCarousel">
-            <amp-carousel height="300" width="400" layout="responsive" type="slides" loop>
-                <amp-img src="/images/promoCarousel/promo_DeathReign.jpg" width="400" height="350"
-                    alt="Death Reign Promo" layout="responsive"></amp-img>
-                <amp-img src="/images/promoCarousel/promo_Petroglyphs.jpg" width="400" height="350"
-                    alt="Petroglyphs promo" layout="responsive">
-                </amp-img>
-                <amp-img src="/images/promoCarousel/promo_Facebook.png" width="400" height="350" alt="Dead Life promo"
-                    layout="responsive">
-                </amp-img>
-                <amp-img src="/images/promoCarousel/promo_Insta.png" width="400" height="350" alt="Dead Life Promo"
-                    layout="responsive">
-                </amp-img>
-            </amp-carousel>
-        </div>
-
-        <!-- MIDNAV -->
-        <div id="midNav">
-            <div>
-                <a class=" navbarItem " href="/merch">
-                    <h2>Merch</h2>
-                </a>
-            </div>
-            <div>
-                <amp-img class=" home-button headIcon" src="/images/headEDIT.png" width="75" height="65">
-                    <p placeholder> </p>
-                </amp-img>
-            </div>
-            <div>
-                <a class="navbarItem
-                    " href="/bands">
-                    <h2>Bands</h2>
-                </a>
-            </div>
-            </header>
-        </div>
-
-        <!-- NEWS CONTAINER -->
-        <div id="midContainer">
-            <div id="newsContainer">
-
-                <!-- SPOTIFY -->
-                <div>
-                    <amp-iframe id="spotifyIframe" src="https://open.spotify.com/embed/playlist/6KYkPkY1QxR6cn3W5z0lPR"
-                        width="250px" height="300px" layout="responsive" frameborder="0"
-                        sandbox="allow-scripts allow-same-origin" allow="encrypted-media" style="margin: auto">
-                    </amp-iframe>
-                </div>
-
-                <!-- NEWS SECTION -->
-                <h2 style="font-family: 'Audiowide', cursive; text-decoration: underline; letter-spacing: 2px">News
-                </h2>
-                <p class="newsDate">4/20/2020</p>
-                <p style="font-family: 'Audiowide', cursive;">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex maiores dignissimos aut itaque
-                    numquam
-                    cum
-                    obcaecati eum quo? Sint velit asperiores similique illo architecto facilis temporibus doloribus
-                    expedita
-                    quas eligendi.
-                </p>
-                <p class="newsDate">6/9/2020</p>
-                <p style="font-family: 'Audiowide', cursive;">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex maiores dignissimos aut itaque
-                    numquam
-                    cum
-                    obcaecati eum quo? Sint velit asperiores similique illo architecto facilis temporibus doloribus
-                    expedita
-                    quas eligendi.
-                </p>
-
-
-                <!-- SOCIAL MEDIA LINKS -->
-                <div>
-                    <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="50"
-                        height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
-                    </amp-social-share>
-                    <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
-                    <amp-img src="/images/iglogo.png" width="50" height="50" alt="a sample image"
-                        style="background: black; border-radius: 25px"></amp-img>
-                </div>
-
-            </div>
-
-            <!-- RELEASES -->
-            <div id="releasesContianer">
-                <h2
-                    style="font-family: 'Audiowide', cursive; text-decoration: underline; font-size: 37.5px; letter-spacing: 2px; margin-top: 45px;">
-                    Releases</h2>
-                <div class="release">
-                    <a
-                        href="https://www.youtube.com/watch?v=vHdCMrrDWU0&feature=youtu.be&fbclid=IwAR1xuL58wWFJCCp_YuKStnRNWap2X1Y9CY8JF_ovkZ92FcGeOm9n6VvgdHo">
-                        <amp-img src="/images/Bands/SmackdUp/SmackdUpDeathReign.jpg" width="200" height="200"
-                            alt="a sample image">
-                        </amp-img>
-                        <h3 class="releaseText">Smack'd Up - Death Reign</h3>
-                    </a>
-                </div>
-                <div class="release">
-                    <a href="https://www.youtube.com/watch?v=ae-X0eqn5WU">
-                        <amp-img src="/images/Bands/Petroglyphs/petroglyphsAscension.jpg" width="200" height="200"
-                            alt="a sample image">
-                        </amp-img>
-                        <h3 class="releaseText">Petroglyphs - Ascension</h3>
-                    </a>
-                </div>
-                <div class="release">
-                    <a
-                        href="https://infinitointorqueo.bandcamp.com/?fbclid=IwAR3FLbCBF-i_iIj7x5jjsaIublwI5p4-R3tiLkF8PZAtFk2YT9nRoMEWv4U">
-                        <amp-img src="/images/Bands/Infinito/infinitoLegends.jpg" width="200" height="200"
-                            alt="a sample image">
-                        </amp-img>
-                        <h3 class="releaseText">Infinito In Torqueo - Legends of The Forsaken</h3>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <h1>Merch</h1>
     </div>
     <br>
     <footer id="footer">
