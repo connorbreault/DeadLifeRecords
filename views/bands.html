@@ -203,7 +203,8 @@
             margin: -75px auto 20px auto;
             background: gray;
             border: black solid 2px;
-            border-radius: 25px
+            border-radius: 25px;
+            padding: 15px
         }
 
         #mainHeader {
@@ -214,6 +215,23 @@
             font-family: 'Audiowide', cursive;
             text-decoration: underline;
             letter-spacing: 2px
+        }
+
+        .card {
+            width: 300px;
+            background: #3b3c3c;
+            text-align: center;
+            margin: auto;
+            font-family: 'Audiowide', cursive;
+            color: white;
+            border: white 2px solid;
+            padding: 5px;
+            border-radius: 15px;
+            margin: 15px auto
+        }
+
+        .card:hover {
+            color: red
         }
 
         #footer {
@@ -250,6 +268,15 @@
 
             #headImg {
                 height: 125px
+            }
+
+            #left {
+                width: 50%
+            }
+
+            #right {
+                width: 50%;
+                margin: 50px auto
             }
 
         }
@@ -353,20 +380,74 @@
 
     <!-- MAIN CONTENT -->
     <div class="mainContainer">
+
         <!-- HEADER -->
         <h1 id="mainHeader">
             Dead
             Life Bands
         </h1>
-        <!-- LEFT DIV -->
-        <div class="left">
-            <a href="/bands/smac">
-                <div class="card">
-                    <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="300" height="300" alt="">
-                    </amp-img>
-                    <p>Smack'd Up</p>
-                </div>
-            </a>
+
+        <!-- BANDS CONTAINER -->
+        <div class="bandsContainer">
+
+            <!-- LEFT DIV -->
+            <div class="left">
+                <!-- BANDS -->
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right">
+                <!-- BANDS -->
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+                <a href="/bands/smack'dUp.html" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Smack'd Up</h2>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <br>
