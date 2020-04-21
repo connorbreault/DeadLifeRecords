@@ -186,6 +186,7 @@
             overflow: hidden;
         }
 
+        /* SIDEBAR LINKS */
         .sidenavItem {
             font-size: 25px
         }
@@ -203,6 +204,16 @@
             background: gray;
             border: black solid 2px;
             border-radius: 25px
+        }
+
+        #mainHeader {
+            font-size: 35px;
+            text-align: center;
+            color: #efefef;
+            margin: 40px auto;
+            font-family: 'Audiowide', cursive;
+            text-decoration: underline;
+            letter-spacing: 2px
         }
 
         #footer {
@@ -342,7 +353,21 @@
 
     <!-- MAIN CONTENT -->
     <div class="mainContainer">
-        <h1>Bands</h1>
+        <!-- HEADER -->
+        <h1 id="mainHeader">
+            Dead
+            Life Bands
+        </h1>
+        <!-- LEFT DIV -->
+        <div class="left">
+            <a href="/bands/smac">
+                <div class="card">
+                    <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="300" height="300" alt="">
+                    </amp-img>
+                    <p>Smack'd Up</p>
+                </div>
+            </a>
+        </div>
     </div>
     <br>
     <footer id="footer">
