@@ -205,6 +205,25 @@
             border-radius: 25px
         }
 
+        #mainHeader {
+            font-size: 35px;
+            text-align: center;
+            color: #efefef;
+            margin: 40px auto;
+            font-family: 'Audiowide', cursive;
+            text-decoration: underline;
+            letter-spacing: 2px
+        }
+
+        .content {
+            margin: auto;
+            text-align: center;
+            color: white;
+            font-family: 'Special Elite', cursive;
+            font-size: 20px;
+            line-height: 25px
+        }
+
         #footer {
             background: #3b3c3c;
             display: flex;
@@ -228,6 +247,20 @@
             .mainContainer {
                 width: 75%;
                 margin: -125px auto 45px auto;
+                padding: 10px
+            }
+
+            .content {
+                display: flex;
+                font-size: 25px
+            }
+
+            .left {
+                width: 40%
+            }
+
+            .right {
+                width: 60%
             }
         }
 
@@ -240,7 +273,6 @@
             #headImg {
                 height: 125px
             }
-
         }
     </style>
 </head>
@@ -342,7 +374,28 @@
 
     <!-- MAIN CONTENT -->
     <div class="mainContainer">
-        <h1>About</h1>
+        <!-- HEADER -->
+        <h1 id="mainHeader">
+            About us
+        </h1>
+        <div class="content">
+
+            <div class="left">
+                <amp-img src="/images/headEDIT.png" width="300" height="300" alt="Dead Life Staff" id="pic">
+                </amp-img>
+            </div>
+
+            <div class="right">
+                <p id="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, architecto? Cupiditate excepturi
+                    laboriosam
+                    inventore! Nisi debitis enim eveniet, numquam necessitatibus suscipit, tempora possimus explicabo
+                    fuga
+                    cum
+                    repudiandae dolor similique fugit.
+                </p>
+            </div>
+        </div>
     </div>
     <br>
     <footer id="footer">
