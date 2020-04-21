@@ -30,6 +30,8 @@
     <script async custom-element="amp-social-share"
         src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -205,6 +207,16 @@
             border-radius: 25px
         }
 
+        #mainHeader {
+            font-size: 35px;
+            text-align: center;
+            color: #efefef;
+            margin: 40px auto;
+            font-family: 'Audiowide', cursive;
+            text-decoration: underline;
+            letter-spacing: 2px
+        }
+
         #footer {
             background: #3b3c3c;
             display: flex;
@@ -342,7 +354,39 @@
 
     <!-- MAIN CONTENT -->
     <div class="mainContainer">
-        <h1>Contact</h1>
+        <h1 id="mainHeader">
+            Contact Us
+        </h1>
+        <form method="post" action-xhr="/api/contact" target="_top">
+            <fieldset>
+                <label>
+                    <span>Name:</span>
+                    <input type="text" name="name" required>
+                </label>
+                <br>
+                <label>
+                    <span>Email:</span>
+                    <input type="email" name="email" required>
+                </label>
+                <br>
+                <input type="submit" value="Send">
+            </fieldset>
+            <div submitting>
+                <template type="amp-mustache">
+                    Form submitting... Thank you for waiting {{name}}.
+                </template>
+            </div>
+            <div submit-success>
+                <template type="amp-mustache">
+                    Message send successful!
+                </template>
+            </div>
+            <div submit-error>
+                <template type="amp-mustache">
+                    Message send failed!
+                </template>
+            </div>
+        </form>
     </div>
     <br>
     <footer id="footer">
