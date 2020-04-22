@@ -1,5 +1,5 @@
 {
-  "name": "Dead_Life_Records",
+  "name": "DeadLifeRecords",
   "version": "1.0.0",
   "description": "## Dead Life Records is a heavy metal independent record label based out of Sacramento, California.",
   "main": "server.js",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/connorbreault/Grafik_roboto"
+    "url": "https://github.com/connorbreault/DeadLifeRecords"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/connorbreault/Grafik_roboto/issues"
+    "url": "https://github.com/connorbreault/DeadLifeRecords/issues"
   },
-  "homepage": "https://github.com/connorbreault/Grafik_roboto#readme"
+  "homepage": "https://github.com/connorbreault/DeadLifeRecords#readme"
 }
