@@ -1,6 +1,5 @@
 require("dotenv").config();
 var express = require("express");
-const bodyParser = require('body-parser')
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -9,7 +8,6 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }))
 
 // Routes
 require("./routes/htmlRoutes")(app);
