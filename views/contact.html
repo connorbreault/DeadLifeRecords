@@ -345,7 +345,7 @@
         // === MATERIALIZE FUNCTIONS === //
         $(document).ready(function () {
             M.AutoInit();
-            emailjs.init("user_deAIEYtIkIShexUgNNM3h");
+            emailjs.init("user_vputF5sqZHvvzak7wkT9M");
         });
         function js_Load() {
             document.body.style.visibility = 'visible'
@@ -363,11 +363,10 @@
                 let templateParams = {
                     type: "MESSAGE",
                     name: Name,
-                    number: "69",
                     email: Email,
                     message: Message,
                 }
-                emailjs.send('default_service', 'grafikmessage', templateParams)
+                emailjs.send('default_service', 'template_nn0OCxfP', templateParams)
                     .then(function (response) {
                         console.log('Sucessful message send!')
                         $("#loadingDiv").addClass("hidden")
