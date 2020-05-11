@@ -147,6 +147,10 @@
             align-items: center;
         }
 
+        #desktopHeader {
+            display: none
+        }
+
         /* GENERAL */
         h1 {
             margin: 0;
@@ -218,7 +222,7 @@
         }
 
         .card {
-            width: 300px;
+            width: 250px;
             background: #3b3c3c;
             text-align: center;
             margin: auto;
@@ -245,9 +249,13 @@
 
 
         /* ===== DESKTOP QUERY ===== */
-        @media only screen and (min-width: 770px) {
+        @media only screen and (min-width: 772px) {
             #mobileHeader {
                 display: none
+            }
+
+            #desktopHeader {
+                display: block
             }
 
             .headImgContainer {
@@ -261,7 +269,8 @@
             }
 
             .card {
-                margin: 25px auto
+                margin: 25px auto;
+                width: 300px
             }
 
             .bandsContainer {
@@ -282,14 +291,9 @@
 
         /* ===== MOBILE QUEERY ===== */
         @media only screen and (max-width: 771px) {
-            #desktopHeader {
-                display: none
-            }
-
             #headImg {
                 height: 125px
             }
-
         }
     </style>
 </head>
@@ -401,35 +405,60 @@
         <!-- BANDS CONTAINER -->
         <div class="bandsContainer">
 
+            <!-- 
+                Apollos Key
+                Hard Knox
+                Infinito in Torqueo
+                Petroglyphs
+                Shorelines
+
+                A Waking Memory
+                Haunted By Day
+                Nail the Casket
+                Smack'd Up
+                The Wolves Are Closing In 
+            -->
             <!-- LEFT DIV -->
             <div class="left">
                 <!-- BANDS -->
-                <a href="/bands/smackdUp" style="text-decoration: none">
+                <a href="/bands/apolloskey" style="text-decoration: none">
                     <div class="card">
-                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        <amp-img src="/images/Bands/ApollosKey/Apollos_Key_Logo.jpg" width="250" height="250" alt="">
                         </amp-img>
-                        <h2>Smack'd Up</h2>
+                        <h2>Apollo's Key</h2>
                     </div>
                 </a>
-                <a href="/bands/smackdUp" style="text-decoration: none">
+                <a href="/bands/hardknox" style="text-decoration: none">
                     <div class="card">
-                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        <amp-img src="/images/Bands/HardKnox/HK_Bandpic.jpg" width="250" height="250" alt="">
                         </amp-img>
-                        <h2>Smack'd Up</h2>
+                        <h2>Hard Knox</h2>
                     </div>
                 </a>
-                <a href="/bands/smackdUp" style="text-decoration: none">
+                <a href="/bands/infinitointorqueo" style="text-decoration: none">
                     <div class="card">
-                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        <amp-img src="/images/Bands/Infinito/IIT_Album_LITEIT.jpg" width="250" height="250" alt="">
                         </amp-img>
-                        <h2>Smack'd Up</h2>
+                        <h2>Infinito in Torqueo</h2>
                     </div>
                 </a>
-                <a href="/bands/smackdUp" style="text-decoration: none">
+                <a href="/bands/petroglyphs" style="text-decoration: none">
                     <div class="card">
-                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        <amp-img src="/images/Bands/Petroglyphs/Petroglyphs_Bandpic.jpg" width="250" height="250"
+                            alt="">
                         </amp-img>
-                        <h2>Smack'd Up</h2>
+                        <h2>
+                            Petroglyphs
+                        </h2>
+                    </div>
+                </a>
+                <a href="/bands/shorelines" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/Shorelines/Shorelines_Logo.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>
+                            Shorelines
+                        </h2>
                     </div>
                 </a>
             </div>
@@ -437,11 +466,25 @@
             <!-- RIGHT -->
             <div class="right">
                 <!-- BANDS -->
-                <a href="/bands/smackdUp" style="text-decoration: none">
+                <a href="/bands/awakingmemory" style="text-decoration: none">
                     <div class="card">
-                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        <amp-img src="/images/Bands/AWakingMemory/AWM_Bandpic.jpg" width="250" height="250" alt="">
                         </amp-img>
-                        <h2>Smack'd Up</h2>
+                        <h2>A Waking Memory</h2>
+                    </div>
+                </a>
+                <a href="/bands/hauntedbyday" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/HauntedByDay/HBD_Logo.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Haunted By Day</h2>
+                    </div>
+                </a>
+                <a href="/bands/nailthecasket" style="text-decoration: none">
+                    <div class="card">
+                        <amp-img src="/images/Bands/NailTheCasket/NTC_Logo.jpg" width="250" height="250" alt="">
+                        </amp-img>
+                        <h2>Nail The Casket</h2>
                     </div>
                 </a>
                 <a href="/bands/smackdUp" style="text-decoration: none">
@@ -451,11 +494,11 @@
                         <h2>Smack'd Up</h2>
                     </div>
                 </a>
-                <a href="/bands/smackdUp" style="text-decoration: none">
+                <a href="/bands/thewolvesareclosingin" style="text-decoration: none">
                     <div class="card">
-                        <amp-img src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" width="250" height="250" alt="">
+                        <amp-img src="/images/Bands/TWACI/TWACI_Bandpic.jpg" width="250" height="250" alt="">
                         </amp-img>
-                        <h2>Smack'd Up</h2>
+                        <h2>The Wolves Are Closing In</h2>
                     </div>
                 </a>
             </div>

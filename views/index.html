@@ -26,10 +26,15 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-fx-collection"
         src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-social-share"
         src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-lightbox-gallery"
+        src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -246,7 +251,7 @@
         }
 
         .release {
-            width: fit-content;
+            width: 100%;
             margin: 40px auto;
             border-radius: 25px;
             font-family: 'Audiowide', cursive;
@@ -261,7 +266,7 @@
 
         .releaseText {
             color: #efefef;
-            text-decoration: none
+            text-decoration: underline
         }
 
         .releaseText:hover {
@@ -469,8 +474,10 @@
             Life Records</h1>
 
         <!-- NEWS CAROUSEL -->
+
         <div class="newsCarousel">
-            <amp-carousel height="300" width="400" layout="responsive" type="slides" loop>
+            <amp-carousel height="300" width="400" layout="responsive" type="slides" controls loop autoplay
+                data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide">
                 <amp-img src="/images/promoCarousel/promo_DeathReign.jpg" width="400" height="350"
                     alt="Death Reign Promo" layout="responsive">
                 </amp-img>
