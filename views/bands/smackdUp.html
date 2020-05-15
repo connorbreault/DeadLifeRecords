@@ -342,10 +342,12 @@
     <div style="height: 75px" id="mobileHeader">
         <header class="headerbar" amp-fx="float-in-top">
             <div style="margin: 10px 75px 0px 0px">
-                <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="/images/headEDIT.png" width="70"
-                    height="70" alt="Dead Life Icon">
-                    <p placeholder> </p>
-                </amp-img>
+                <a href="/">
+                    <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="/images/headEDIT.png" width="70"
+                        height="70" alt="Dead Life Icon">
+                        <p placeholder> </p>
+                    </amp-img>
+                </a>
             </div>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
                 <p style="font-size: 30px">☰</p>
@@ -356,10 +358,12 @@
     <!-- SIDENAV -->
     <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
         <div class="site-name" style="display: flex; padding:'10px';">
-            <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="/images/headEDIT.png"
-                width="70" height="70" alt="Dead Life Icon">
-                <p placeholder> </p>
-            </amp-img>
+            <a href="/">
+                <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="/images/headEDIT.png"
+                    width="70" height="70" alt="Dead Life Icon">
+                    <p placeholder> </p>
+                </amp-img>
+            </a>
             <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle" style="margin-left: 60px">
                 <p style="color: white; font-size: 30px; font-family: 'Special Elite', cursive;">X</p>
             </div>
@@ -412,10 +416,12 @@
                     " href="/bands">Bands</a>
             </div>
             <div>
-                <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65"
-                    alt="Dead Life Icon">
-                    <p placeholder> </p>
-                </amp-img>
+                <a href="/">
+                    <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65"
+                        alt="Dead Life Icon">
+                        <p placeholder> </p>
+                    </amp-img>
+                </a>
             </div>
             <div>
                 <a class="navbarItem
@@ -427,13 +433,21 @@
             </div>
         </header>
     </div>
+
+    <!-- MAIN CONTAINER -->
     <div class="mainContainer" style="margin: auto">
+
+        <!-- PICTURE AND NAME RESPONSIVE DIV -->
         <div class="picName">
+
+            <!-- BAND PICTURE -->
             <div id="bandPic" style="text-align: center;">
                 <amp-img alt="Smack'd Up" src="/images/Bands/SmackdUp/smackdUpBandPic.jpg" height="275" width="275"
                     layout="fixed">
                 </amp-img>
             </div>
+
+            <!-- BAND NAME -->
             <div id="bandName" style="text-align: center">
                 <h1 style="font-family: 'Audiowide', cursive; color:white;">Smack'd Up</h1>
             </div>
