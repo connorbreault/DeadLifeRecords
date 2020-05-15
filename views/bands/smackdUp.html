@@ -27,6 +27,8 @@
         src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -194,7 +196,8 @@
 
         .town,
         .members,
-        .about {
+        .about,
+        #merchUpdateDiv {
             border: red 1px solid;
             background: darkgray;
             border-radius: 20px;
@@ -208,7 +211,7 @@
             margin: auto
         }
 
-        .infoHeader {
+        .Header {
             font-family: 'Audiowide', cursive;
             color: red;
             letter-spacing: 5px;
@@ -216,9 +219,13 @@
             text-decoration-color: gray;
         }
 
-        .infoText {
+        .Text {
             font-family: 'Special Elite', cursive;
             font-size: 20px
+        }
+
+        #merchUpdateDiv {
+            width: 80%;
         }
 
         .youtube,
@@ -228,6 +235,16 @@
 
         .spotify {
             height: 320px
+        }
+
+        .merchLink {
+            font-family: 'Audiowide', cursive;
+            color: red;
+            letter-spacing: 3px
+        }
+
+        .merchLink:hover {
+            color: white
         }
 
         #footer {
@@ -255,7 +272,8 @@
                 margin: 20px auto
             }
 
-            #bandPic {
+            #bandPic,
+            .merchCarousel {
                 width: 40%
             }
 
@@ -265,15 +283,22 @@
             }
 
             .infoDiv,
-            .mediaDiv {
+            .mediaDiv,
+            #merchUpdateDiv {
                 display: flex;
+                justify-content: center
+            }
+
+            #merchUpdateDiv {
+                width: 75%
             }
 
             .townMembers {
                 width: 40%
             }
 
-            .about {
+            .about,
+            .updates {
                 width: 60%
             }
 
@@ -416,14 +441,14 @@
         <div class="infoDiv">
             <div class="townMembers">
                 <div class="town">
-                    <h2 class="infoHeader">
+                    <h2 class="Header">
                         Hometown</h2>
-                    <h3 class="infoText">Sacramento, CA</h3>
+                    <h3 class="Text">Sacramento, CA</h3>
                 </div>
                 <div class="members">
-                    <h2 class="infoHeader">
+                    <h2 class="Header">
                         Members</h2>
-                    <ul class="infoText">
+                    <ul class="Text">
                         <li>Matt Kupers - Vocals</li>
                         <li>Chris Biermans - Guitar</li>
                         <li>Mike Sebastian - Guitar</li>
@@ -433,18 +458,62 @@
                 </div>
             </div>
             <div class="about">
-                <h2 class="infoHeader">About
+                <h2 class="Header">About
                 </h2>
-                <h4 class="infoText">
+                <h4 class="Text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iusto quidem officia odio! Sequi
                     nostrum, eius aliquid, non et quis accusantium unde odio suscipit eaque eum? Deserunt soluta itaque
                     doloremque.
                 </h4>
-                <h4 class="infoText">
+                <h4 class="Text">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos aliquam ducimus laudantium quos cum
                     totam fugit sunt libero earum tempore, quidem, soluta excepturi et aut amet accusantium ratione
                     doloribus ut.
                 </h4>
+            </div>
+        </div>
+        <div id="merchUpdateDiv" style="margin: auto">
+            <div class="merchCarousel">
+                <h2 class="Header" style="color: reds">Merch</h2>
+                <amp-carousel class="carousel1" layout="responsive" height="450" width="500" type="slides" loop autoplay
+                    data-next-button-aria-label="Go to next slide"
+                    data-previous-button-aria-label="Go to previous slide">
+                    <div class="slide">
+                        <amp-img src="/images/Bands/SmackdUp/merch/White_Logo_T.png" layout="responsive" width="500"
+                            height="400" alt="Smack'd Up"></amp-img>
+                        <amp-fit-text layout="responsive" width="500" height="50" class="Text">
+                            White Logo Tee
+                        </amp-fit-text>
+                    </div>
+                    <div class="slide">
+                        <amp-img src="/images/Bands/SmackdUp/merch/White_Logo_T.png" layout="responsive" width="500"
+                            height="400" alt="Smack'd Up"></amp-img>
+                        <amp-fit-text layout="responsive" width="500" height="50" class="Text">
+                            White Logo Tee 2
+                        </amp-fit-text>
+                    </div>
+                </amp-carousel>
+                <a href="https://dead-life-records.myshopify.com/collections/smackd-up-merch" class="merchLink">View
+                    here!</a>
+            </div>
+            <div class="updates">
+                <h2 class="Header">
+                    Updates & Shows
+                </h2>
+                <p class="Text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis molestias sint illo
+                    quisquam repellendus quae minima voluptatibus atque consectetur architecto. Eius aliquid, non et
+                    quis accusantium unde odio suscipit eaque eum? Deserunt soluta itaque
+                    doloremque.
+                </p>
+                <p class="Text">
+                    <span style="color: red">4/20</span> - Sacramento @ Ur moms
+                    <br>
+                    <span style="color: red">4/21</span> - Downtown Pound Town @ Rub Hub
+                    <br>
+                    <span style="color: red">4/22</span>- Sacramento @ Ur moms again
+                    <br>
+                    <span style="color: red">6/9</span> - Orangevale @ The Boardwalk
+                </p>
             </div>
         </div>
         <div class="mediaDiv">
@@ -461,7 +530,7 @@
                 </amp-youtube>
             </div>
         </div>
-        <div class="followDiv" style="margin: auto; text-align: center">
+        <div class="followDiv" style="margin: 20px auto; text-align: center">
             <h2 style="color: white; letter-spacing: 4px; font-family: 'Audiowide', cursive;">Follow Us</h2>
             <!-- SOCIAL MEDIA LINKS -->
             <div class="socialLinks">
