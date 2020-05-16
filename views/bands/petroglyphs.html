@@ -1,15 +1,615 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html amp lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Petroglyphs</title>
+    <link rel="canonical" href="https://connorbreault.github.io/DeadLifeRecords/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Special+Elite|Satisfy|Bangers|Sriracha|Audiowide">
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-fx-collection"
+        src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+    <script async custom-element="amp-social-share"
+        src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <style amp-custom>
+        :root {
+            --color-primary: black;
+            --color-text-light: #fff;
+        }
+
+        /* a custom sharing icon */
+        amp-social-share.custom-style {
+            background-color: #008080;
+            background-image: url('https://instagram.com/deadliferecords916?igshid=6uqx37fib4lv');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        /* blue icons with rounded corners  */
+        amp-social-share.rounded {
+            border-radius: 50%;
+            background-size: 60%;
+            color: var(--color-text-light);
+            background-color: var(--color-primary);
+        }
+
+        body {
+            width: auto;
+            margin: 0;
+            padding: 0;
+            background: url("/images/mainBG.jpg")
+        }
+
+        /* NAVBAR */
+        header {
+            background: transparent;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            z-index: 10;
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            padding: 5px;
+            height: 85px;
+            width: 100vw;
+            align-items: center;
+        }
+
+        /* GENERAL */
+        h1 {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p {
+            padding: 0.5em;
+            margin: 0.5em;
+        }
+
+        .home-button {
+            margin-top: 8px;
+        }
+
+        .site-name {
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        .navbarItem {
+            color: white;
+            text-decoration: underline dashed gray;
+            font-family: 'Special Elite', cursive;
+            text-shadow: 3px 3px black;
+        }
+
+        .navbarItem:hover {
+            color: red;
+        }
+
+        /* SIDEBAR */
+        #sidebar1 {
+            width: 250px;
+            background: url("/images/sidenavBG.jpg");
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidenavItem {
+            font-size: 25px
+        }
+
+        .mainContainer {
+            background: gray;
+            border: black solid 2px;
+            border-radius: 25px;
+            padding: 10px
+        }
+
+        .town,
+        .members,
+        .about,
+        #merchUpdateDiv {
+            border: red 1px solid;
+            background: darkgray;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            padding: 10px
+        }
+
+        .infoDiv {
+            width: 90%;
+            margin: auto
+        }
+
+        .Header {
+            font-family: 'Audiowide', cursive;
+            color: red;
+            letter-spacing: 5px;
+            text-decoration: underline;
+            text-decoration-color: gray;
+        }
+
+        .Text {
+            font-family: 'Special Elite', cursive;
+            font-size: 20px
+        }
+
+        #merchUpdateDiv {
+            width: 80%;
+        }
+
+        .youtube,
+        .spotify {
+            margin: 10px
+        }
+
+        .spotify {
+            height: 320px
+        }
+
+        .merchLink {
+            font-family: 'Audiowide', cursive;
+            color: red;
+            letter-spacing: 3px
+        }
+
+        .merchLink:hover {
+            color: white
+        }
+
+        #footer {
+            background: #3b3c3c;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-family: 'Special Elite', cursive;
+        }
+
+
+        /* ===== DESKTOP QUERY ===== */
+        @media only screen and (min-width: 770px) {
+            #mobileHeader {
+                display: none
+            }
+
+            .mainContainer {
+                width: 80%;
+                margin: 20px auto
+            }
+
+            .Text {
+                font-size: 25px
+            }
+
+            .picName {
+                display: flex;
+                margin: 20px auto
+            }
+
+            #bandPic,
+            .merchCarousel {
+                width: 40%
+            }
+
+            #bandName {
+                width: 50%;
+                font-size: 40px
+            }
+
+            .infoDiv,
+            .mediaDiv,
+            #merchUpdateDiv {
+                display: flex;
+                justify-content: center
+            }
+
+            #merchUpdateDiv {
+                width: 75%
+            }
+
+            .townMembers {
+                width: 40%
+            }
+
+            .about,
+            .updates {
+                width: 60%
+            }
+
+            .youtube,
+            .spotify {
+                width: 50%;
+                margin: 10px auto
+            }
+
+            .spotify {
+                height: 325px
+            }
+
+            .socialLinks {
+                display: flex;
+                justify-content: space-around;
+                width: 30%;
+                margin: auto;
+            }
+        }
+
+        /* ===== MOBILE QUEERY ===== */
+        @media only screen and (max-width: 771px) {
+            #desktopHeader {
+                display: none
+            }
+
+            .mainContainer {
+                width: 90%
+            }
+
+            .bandName {
+                font-size: 35px
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Petroglyphs</h1>
+    <!-- MOBILE NAVBAR -->
+    <div style="height: 75px" id="mobileHeader">
+        <header class="headerbar" amp-fx="float-in-top">
+            <div style="margin: 10px 75px 0px 0px">
+                <a href="/">
+                    <amp-img class="headIcon" style="text-shadow: 5px 5px gray;" src="/images/headEDIT.png" width="70"
+                        height="70" alt="Dead Life Icon">
+                        <p placeholder> </p>
+                    </amp-img>
+                </a>
+            </div>
+            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">
+                <p style="font-size: 30px">☰</p>
+            </div>
+        </header>
+    </div>
+
+    <!-- SIDENAV -->
+    <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
+        <div class="site-name" style="display: flex; padding:'10px';">
+            <a href="/">
+                <amp-img class="headIcon" style="text-shadow: 5px 5px gray; margin: 15px" src="/images/headEDIT.png"
+                    width="70" height="70" alt="Dead Life Icon">
+                    <p placeholder> </p>
+                </amp-img>
+            </a>
+            <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle" style="margin-left: 60px">
+                <p style="color: white; font-size: 30px; font-family: 'Special Elite', cursive;">X</p>
+            </div>
+        </div>
+        <div class="sidebarList" style="margin: 25px auto; text-align: center">
+            <a href="https://dead-life-records.myshopify.com/" class="navbarItem sidenavItem">
+                <p>
+                    Merch
+                </p>
+            </a>
+            <a href="/bands" class="navbarItem sidenavItem">
+                <p>
+                    Bands
+                </p>
+            </a>
+            <a href="/about" class="navbarItem sidenavItem">
+                <p>
+                    About us
+                </p>
+            </a>
+            <a href="/contact" class="navbarItem sidenavItem">
+                <p>
+                    Contact us
+                </p>
+            </a>
+            <!-- SOCIAL MEDIA LINKS -->
+            <div>
+                <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="50"
+                    height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
+                </amp-social-share>
+                <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
+                <a
+                    href="https://www.instagram.com/deadliferecords916/?igshid=6uqx37fib4lv&fbclid=IwAR0Z5jIT16bb2BLtVVh9D3sHjqqpn3pa_nSek1Jq48WPH03FD_BC5I05Ow0">
+                    <amp-img src="/images/iglogo.png" width="50" height="50" alt="Instagram Icon"
+                        style="background: black; border-radius: 25px"></amp-img>
+                </a>
+            </div>
+        </div>
+    </amp-sidebar>
+
+    <!-- DESKTOP NAVBAR -->
+    <div style="height: 75px;" id="desktopHeader">
+        <header class="headerbar" amp-fx="float-in-top">
+            <div>
+                <a class="navbarItem
+                    " href="https://dead-life-records.myshopify.com/">Merch</a>
+            </div>
+            <div>
+                <a class="navbarItem
+                    " href="/bands">Bands</a>
+            </div>
+            <div>
+                <a href="/">
+                    <amp-img class="home-button headIcon" src="/images/headEDIT.png" width="75" height="65"
+                        alt="Dead Life Icon">
+                        <p placeholder> </p>
+                    </amp-img>
+                </a>
+            </div>
+            <div>
+                <a class="navbarItem
+                    " href="/about">About</a>
+            </div>
+            <div>
+                <a class="navbarItem
+                    " href="/contact">Contact</a>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="mainContainer" style="margin: auto">
+
+        <!-- PICTURE AND NAME RESPONSIVE DIV -->
+        <div class="picName">
+
+            <!-- BAND PICTURE -->
+            <div id="bandPic" style="text-align: center;">
+                <amp-img alt="Petroglyphs Band Pic" src="/images/Bands/Petroglyphs/Petroglyphs_Bandpic.jpg" height="275"
+                    width="275" layout="fixed">
+                </amp-img>
+            </div>
+
+            <!-- BAND NAME -->
+            <div id="bandName" style="text-align: center">
+                <h1 style="font-family: 'Audiowide', cursive; color:white;">Petroglyphs</h1>
+            </div>
+        </div>
+
+        <!-- GENERAL INFO DIV -->
+        <div class="infoDiv">
+
+            <!-- TOWN AND MEMBERS DIV -->
+            <div class="townMembers">
+
+                <!-- TOWN DIV -->
+                <div class="town">
+                    <h2 class="Header">
+                        Hometown</h2>
+                    <h3 class="Text">Sacramento, CA</h3>
+                </div>
+
+                <!-- MEMBERS DIV -->
+                <div class="members">
+                    <h2 class="Header">
+                        Members</h2>
+                    <ul class="Text">
+                        <li>Anon - Vocals</li>
+                        <li>Jonny Avila - Guitar/Vocals</li>
+                        <li>Sergio Vega - Guitar</li>
+                        <li>Kevin Burson - Bass</li>
+                        <li>Anon - Drums</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ABOUT DIV -->
+            <div class="about">
+                <h2 class="Header">About
+                </h2>
+                <h4 class="Text">
+                    5-Piece Metalcore from Northen California formed October 2018.
+                </h4>
+            </div>
+        </div>
+
+        <!-- MERCH CAROUSEL AND UPDATES/SHOWS DIV -->
+        <div id="merchUpdateDiv" style="margin: auto">
+
+            <!-- CAROUSEL DIV -->
+            <div class="merchCarousel">
+                <h2 class="Header" style="color: reds">Merch</h2>
+
+                <!-- CAROUSEL -->
+                <amp-carousel class="carousel1" layout="responsive" height="450" width="500" type="slides" loop autoplay
+                    data-next-button-aria-label="Go to next slide"
+                    data-previous-button-aria-label="Go to previous slide">
+                    <!-- SLIDE 1 - WHITE LOGO TSHIRT -->
+                    <div class="slide">
+                        <amp-img src="/images/Bands/Petroglyphs/merch/White_Logo_T.png" layout="responsive" width="500"
+                            height="400" alt="Petroglyphs Merch"></amp-img>
+                        <amp-fit-text layout="responsive" width="500" height="50" class="Text">
+                            White Logo Tee
+                        </amp-fit-text>
+                    </div>
+                    <!-- SLIDE 2 - WHITE LOGO SHIRT 2 -->
+                    <div class="slide">
+                        <amp-img src="/images/Bands/Petroglyphs/merch/White_Logo_T.png" layout="responsive" width="500"
+                            height="400" alt="Petroglyphs Merch"></amp-img>
+                        <amp-fit-text layout="responsive" width="500" height="50" class="Text">
+                            White Logo Tee 2
+                        </amp-fit-text>
+                    </div>
+                </amp-carousel>
+
+                <!-- MERCH LINK -->
+                <a href="https://dead-life-records.myshopify.com/collections/petroglyphs-merch" class="merchLink">
+                    View here!
+                </a>
+            </div>
+
+            <!-- UPDATES DIV -->
+            <div class="updates">
+                <h2 class="Header">
+                    Updates & Shows
+                </h2>
+
+                <!-- UPDATE -->
+                <p class="Text">
+                    Nothing yet...
+                    <br>
+                    <br>
+                    More updates and announcements will be posted soon.
+                </p>
+
+                <!-- SHOWS -->
+                <!-- <p class="Text">
+                    <span style="color: red">4/20</span> - Sacramento @ Ur moms
+                    <br>
+                    <span style="color: red">4/21</span> - Downtown Pound Town @ Rub Hub
+                    <br>
+                    <span style="color: red">4/22</span>- Sacramento @ Ur moms again
+                    <br>
+                    <span style="color: red">6/9</span> - Orangevale @ The Boardwalk
+                </p> -->
+            </div>
+        </div>
+
+        <!-- SPOTIFY AND YOUTUBE DIV -->
+        <div class="mediaDiv">
+
+            <!-- SPOTIFY IFRAME -->
+            <div class="spotify" style="overflow: hidden; border: black 1px solid;">
+                <amp-iframe id="spotifyIframe"
+                    src="https://open.spotify.com/embed/artist/3Dnkqdt1ctmSu7EFPlxKEx?si=iz5NoZrRQMOjGtPnflDHAQ"
+                    width="250px" height="300px" layout="responsive" frameborder="0"
+                    sandbox="allow-scripts allow-same-origin" allow="encrypted-media" style="margin: auto">
+                </amp-iframe>
+            </div>
+
+            <!-- YOUTUBE IFRAME -->
+            <div class="youtube">
+                <amp-youtube id="youtubeIframe" data-videoid="Ges-LjEd3IE" width="358" height="204" layout="responsive">
+                    <amp-img
+                        src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.spirit-of-metal.com%2Fles%2520goupes%2FP%2FPetroglyphs%2Fpics%2F1238621_logo.jpg&imgrefurl=https%3A%2F%2Fwww.spirit-of-metal.com%2Fen%2Fband%2FPetroglyphs&tbnid=GHxHSjL9HIpwQM&vet=12ahUKEwiBwY-nmbnpAhXiATQIHVscD-YQMygPegUIARCIAg..i&docid=G_-mPaoupNGyPM&w=400&h=139&q=petroglyphs%20band&ved=2ahUKEwiBwY-nmbnpAhXiATQIHVscD-YQMygPegUIARCIAg"
+                        placeholder layout="fill" />
+                </amp-youtube>
+            </div>
+        </div>
+
+        <!-- FOLLOW LINKS DIV -->
+        <div class="followDiv" style="margin: 20px auto; text-align: center">
+            <h2 style="color: white; letter-spacing: 4px; font-family: 'Audiowide', cursive;">Follow Us</h2>
+
+            <!-- SOCIAL MEDIA LINKS -->
+            <div class="socialLinks">
+
+                <!-- FACEBOOK -->
+                <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="50"
+                    height="50" data-share-endpoint="https://www.facebook.com/petroglyphs/?ref=page_internal">
+                </amp-social-share>
+
+                <!-- TWITTER -->
+                <amp-social-share class="rounded" type="twitter" width="50" height="50"
+                    data-share-endpoint="https://twitter.com/PetroglyphsBand">
+                </amp-social-share>
+
+                <!-- INSTAGRAM -->
+                <a href="https://www.instagram.com/petroglyphsband/">
+                    <amp-img src="/images/iglogo.png" width="50" height="50" alt="Instagram Icon"
+                        style="background: black; border-radius: 25px">
+                    </amp-img>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <p>Copyright 2020</p>
+        <p style="text-align: right">Dead Life Records</p>
+    </footer>
 </body>
 
 </html>
