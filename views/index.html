@@ -284,11 +284,46 @@
         }
 
         #footer {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        #footerTop {
+            background: #323232;
+            text-align: center
+        }
+
+        #footerBottom {
             background: #3b3c3c;
+            color: white;
+            padding-top: 10px
+        }
+
+        #footerNavbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            color: white;
+            margin: 20px 0px;
+        }
+
+        .designBy {
+            width: fit-content;
+            text-align: center;
+            margin: 20px auto;
+            border: solid 1px;
+            opacity: .420;
+            padding: 0px 10px;
+            line-height: 0px;
+            letter-spacing: 2px;
+        }
+
+        .designBy:hover {
+            opacity: 1.0;
+        }
+
+        #footerCopyright {
             display: flex;
             justify-content: space-between;
-            color: white;
-            font-family: 'Oswald', sans-serif;
         }
 
 
@@ -341,6 +376,23 @@
             .release {
                 margin: 75px auto;
             }
+
+            #footer {
+                display: flex
+            }
+
+            #footerTop {
+                width: 40%
+            }
+
+            #footerBottom {
+                width: 60%
+            }
+
+            #footerCopyright {
+                width: 75%;
+                margin: auto;
+            }
         }
 
         /* ===== MOBILE QUEERY ===== */
@@ -359,6 +411,10 @@
 
             #releasesContianer {
                 width: 75%
+            }
+
+            #footerTop {
+                margin: -10px 0px;
             }
 
         }
@@ -612,8 +668,39 @@
     </div>
     <br>
     <footer id="footer">
-        <p>Copyright 2020</p>
-        <p style="text-align: right">Dead Life Records</p>
+        <div id="footerTop">
+            <p>stuff</p>
+            <p>stuff</p>
+        </div>
+        <div id="footerBottom">
+            <div id="footerNavbar">
+                <!-- <a href="/" class="navbarItem">Home</a> -->
+                <a href="/bands" class="navbarItem">Bands</a>
+                <a href="https://dead-life-records.myshopify.com/" class="navbarItem">Merch</a>
+                <a href="/about" class="navbarItem">About</a>
+                <a href="/contact" class="navbarItem">Contact</a>
+            </div>
+            <div style="margin: 25px auto auto auto">
+                <div>
+                    <p class="text" style="opacity: .2; text-align: center; letter-spacing: 5px">WELCOME TO THE DEAD
+                        LIFE
+                    </p>
+                </div>
+                <div class="designBy">
+                    <a href="https://connorbreault.dev/" class="text" style="color: white; text-decoration: none">
+                        <h6 style="text-align: center;">DESIGN BY CONNOR BREAULT</h6>
+                    </a>
+                </div>
+                <div>
+                    <p class="text" style="opacity: .2; text-align: center; letter-spacing: 1px">ESTABLISHED IN 2016
+                    </p>
+                </div>
+            </div>
+            <div id="footerCopyright">
+                <p>Copyright 2020</p>
+                <p>Dead Life Records</p>
+            </div>
+        </div>
     </footer>
 </body>
 
