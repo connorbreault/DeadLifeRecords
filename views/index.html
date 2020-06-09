@@ -34,6 +34,8 @@
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-lightbox-gallery"
         src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -285,16 +287,17 @@
 
         #footer {
             font-family: 'Oswald', sans-serif;
+            color: white;
         }
 
         #footerTop {
             background: #323232;
-            text-align: center
+            text-align: center;
+            padding: 10px;
         }
 
         #footerBottom {
             background: #3b3c3c;
-            color: white;
             padding-top: 10px
         }
 
@@ -411,10 +414,6 @@
 
             #releasesContianer {
                 width: 75%
-            }
-
-            #footerTop {
-                margin: -10px 0px;
             }
 
         }
@@ -669,8 +668,48 @@
     <br>
     <footer id="footer">
         <div id="footerTop">
-            <p>stuff</p>
-            <p>stuff</p>
+            <amp-img alt="Dead Life" width="150" height="150" src="/images/headEDIT.png"></amp-img>
+            <h2>Subscribe to our newsletter!</h2>
+
+            <form method="post" action-xhr="https://example.com/subscribe" target="_top"
+                style="width: 75%; margin: auto;">
+                <fieldset>
+                    <label>
+                        <span>Name:</span>
+                        <input type="text" name="name" required>
+                    </label>
+                    <br>
+                    <label>
+                        <span>Email:</span>
+                        <input type="email" name="email" required>
+                    </label>
+                    <br>
+                    <input type="submit" value="Subscribe">
+                </fieldset>
+                <div submit-success>
+                    <template type="amp-mustache">
+                        Subscription successful!
+                    </template>
+                </div>
+                <div submit-error>
+                    <template type="amp-mustache">
+                        Subscription failed!
+                    </template>
+                </div>
+            </form>
+
+            <h3>Follow us here</h3>
+            <div>
+                <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="50"
+                    height="50" data-share-endpoint="https://www.facebook.com/deadliferecords/">
+                </amp-social-share>
+                <amp-social-share class="rounded" type="twitter" width="50" height="50"></amp-social-share>
+                <a
+                    href="https://www.instagram.com/deadliferecords916/?igshid=6uqx37fib4lv&fbclid=IwAR0Z5jIT16bb2BLtVVh9D3sHjqqpn3pa_nSek1Jq48WPH03FD_BC5I05Ow0">
+                    <amp-img src="/images/iglogo.png" width="50" height="50" alt="Instagram Icon"
+                        style="background: black; border-radius: 25px"></amp-img>
+                </a>
+            </div>
         </div>
         <div id="footerBottom">
             <div id="footerNavbar">
@@ -682,17 +721,17 @@
             </div>
             <div style="margin: 25px auto auto auto">
                 <div>
-                    <p class="text" style="opacity: .2; text-align: center; letter-spacing: 5px">WELCOME TO THE DEAD
+                    <p style="opacity: .2; text-align: center; letter-spacing: 5px">WELCOME TO THE DEAD
                         LIFE
                     </p>
                 </div>
                 <div class="designBy">
-                    <a href="https://connorbreault.dev/" class="text" style="color: white; text-decoration: none">
+                    <a href="https://connorbreault.dev/" style="color: white; text-decoration: none">
                         <h6 style="text-align: center;">DESIGN BY CONNOR BREAULT</h6>
                     </a>
                 </div>
                 <div>
-                    <p class="text" style="opacity: .2; text-align: center; letter-spacing: 1px">ESTABLISHED IN 2016
+                    <p style="opacity: .2; text-align: center; letter-spacing: 1px">ESTABLISHED IN 2016
                     </p>
                 </div>
             </div>
