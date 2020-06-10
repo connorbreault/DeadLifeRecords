@@ -309,6 +309,10 @@
             margin: 20px 0px;
         }
 
+        #footerBottomContent {
+            margin: 25px auto auto auto
+        }
+
         .designBy {
             width: fit-content;
             text-align: center;
@@ -388,8 +392,18 @@
                 width: 40%
             }
 
+            #newsletterHead {
+                justify-content: space-evenly;
+                display: flex;
+                margin: 10px auto;
+            }
+
             #footerBottom {
                 width: 60%
+            }
+
+            #footerBottomContent {
+                margin: 60px auto 40px auto;
             }
 
             #footerCopyright {
@@ -668,8 +682,10 @@
     <br>
     <footer id="footer">
         <div id="footerTop">
-            <amp-img alt="Dead Life" width="150" height="150" src="/images/headEDIT.png"></amp-img>
-            <h2>Subscribe to our newsletter!</h2>
+            <div id="newsletterHead">
+                <amp-img alt="Dead Life" width="150" height="150" src="/images/headEDIT.png"></amp-img>
+                <h2>Subscribe to our newsletter!</h2>
+            </div>
 
             <form method="post" action-xhr="https://example.com/subscribe" target="_top"
                 style="width: 75%; margin: auto;">
@@ -719,7 +735,7 @@
                 <a href="/about" class="navbarItem">About</a>
                 <a href="/contact" class="navbarItem">Contact</a>
             </div>
-            <div style="margin: 25px auto auto auto">
+            <div id="footerBottomContent">
                 <div>
                     <p style="opacity: .2; text-align: center; letter-spacing: 5px">WELCOME TO THE DEAD
                         LIFE
