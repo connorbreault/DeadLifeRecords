@@ -3,6 +3,7 @@
 module.exports = function (app) {
     // CONTACT FORM
     app.post("/subscribe", function (req, res) {
-        res.json(req.body);
+        let request = req.body
+        res.send(request.toString());
     });
 };
