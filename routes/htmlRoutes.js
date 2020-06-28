@@ -9,20 +9,14 @@ module.exports = function (app) {
     });
 
     // MAIN PAGES
-    app.get("/contact", function (req, res) {
-        res.sendFile(path.join(__dirname, "../views/contact.html"));
+    app.get("/:page", function (req, res) {
+        let page = req.params.page
+        res.sendFile(path.join(__dirname, `../views/${page}.html`));
     });
-    app.get("/bands", function (req, res) {
-        res.sendFile(path.join(__dirname, "../views/bands.html"));
-    });
-    app.get("/about", function (req, res) {
-        res.sendFile(path.join(__dirname, "../views/about.html"));
-    });
-
 
     // BANDS
     app.get("/bands/:band", function (req, res) {
         let band = req.params.band
-        res.sendFile(path.join(__dirname, "../views/bands/" + band + ".html"));
+        res.sendFile(path.join(__dirname, `../views/bands/${band}.html`));
     });
 };
