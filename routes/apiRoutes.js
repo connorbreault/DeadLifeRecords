@@ -4,7 +4,7 @@ var multipart = multer();
 // Routes
 module.exports = function (app) {
     // Subs get
-    app.get("/api/all", function (req, res) {
+    app.get("/a6p6i6/a4l2l0", function (req, res) {
         db.Sub.findAll({}).then(function (results) {
             res.json(results);
         });
@@ -22,7 +22,6 @@ module.exports = function (app) {
         res.setHeader('AMP-Access-Control-Allow-Source-Origin', 'http://' + req.headers.host);
         res.setHeader('Access-Control-Expose-Headers', 'AMP-Access-Control-Allow-Source-Origin');
         res.json(response);
-        console.log(response)
         db.Sub.create({
             name: req.body.name,
             email: req.body.email,
