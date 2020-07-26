@@ -1,4 +1,6 @@
 var db = require("../models");
+var multer = require('multer');
+var multipart = multer();
 // Routes
 module.exports = function (app) {
     // Subs get
@@ -10,9 +12,17 @@ module.exports = function (app) {
     });
 
     // Subs post
-    app.post("/subscribe", function (req, res) {
-        console.log(req.body);
-
+    app.post("/subscribe", multipart.fields([]), function (req, res) {
+        var response = {
+            example: req.body ? req.body : ''
+        };
+        res.setHeader('Content-type', 'application/json');
+        res.setHeader('Access-Control-Allow-Credentials', true);
+        res.setHeader('Access-Control-Allow-Origin', '*.ampproject.org');
+        res.setHeader('AMP-Access-Control-Allow-Source-Origin', 'http://' + req.headers.host);
+        res.setHeader('Access-Control-Expose-Headers', 'AMP-Access-Control-Allow-Source-Origin');
+        res.json(response);
+        console.log(response)
         db.Sub.create({
             name: req.body.name,
             email: req.body.email,
