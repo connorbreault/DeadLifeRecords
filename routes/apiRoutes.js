@@ -11,9 +11,9 @@ module.exports = function (app) {
 
     // Subs post
     app.post("/subscribe", function (req, res) {
-        console.log("Sub Data: " + req.body);
+        console.log(req.body);
 
-        Sub.create({
+        db.Sub.create({
             name: req.body.name,
             email: req.body.email,
         }).then(function (results) {
