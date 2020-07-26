@@ -31,4 +31,13 @@ module.exports = function (app) {
             res.end();
         });
     });
+    app.delete("/delete/:id", function (req, res) {
+        db.Sub.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (result) {
+            res.json(result)
+        })
+    });
 };
