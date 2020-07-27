@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Page</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Import Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Email JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <style>
+        /* === HIDDEN === */
+        .hidden {
+            display: none
+        }
+
+        .bg {
+            background: url("/images/mainBG.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            padding: 0px auto 50px auto;
+            text-align: center
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        #mainContent {
+            border: black solid 2px;
+            border-radius: 25px;
+            margin: 15px auto;
+            width: 95%;
+            padding: 20px 5px;
+            background: gray;
+        }
+
+        #allSubs {
+            border: #9e9e9e 2px solid;
+            border-radius: 25px;
+            margin: 15px auto;
+            width: 75%
+        }
+
+        #title {
+            width: 75%;
+            text-align: center;
+            color: white
+        }
+
+        #message {
+            width: 80%;
+            border: 1px #9e9e9e solid;
+            text-align: center;
+            color: white
+        }
+
+        #returnHome {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            margin: auto 10px
+        }
+
+        #footer {
+            background: #3b3c3c;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 0px 15px;
+        }
+
+        /* ============= MEDIA QUERIES ============== */
+        /* ========== larger than 800px ============= */
+        @media only screen and (min-width: 800px) {
+            #mainContent {
+                width: 75%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div>
+            <a href="/" id=returnHome>
+                <p class="extrasItems" style="color: white;">Return Home
+                </p>
+                <img src="/images/headEDIT.png" alt="Dead Life Logo"
+                    style="width: 40px; height: 40px; margin: auto 10px">
+            </a>
+        </div>
+        <h2 style="color: white; letter-spacing: 3px">DLR Admin Page</h2>
+        <div id="mainContent">
+            <div id="allSubs">
+                <h3 style="color: white">See all subscribers</h3>
+                <button id="allSubsButt" class="btn">Fetch subs</button>
+                <ul id="subList" style="color: white"></ul>
+            </div>
+            <div id="messageDiv">
+                <h3 style="color: white">Create Email</h3>
+                <h5>Title</h5>
+                <input type="text" id="title">
+                <h5>Message</h5>
+                <textarea name="message" id="message" cols="50" rows="10" style="height: 10rem;"></textarea>
+                <br>
+                <button id="sendButt" class="btn">Send to Subscribers</button>
+            </div>
+            <div class="hidden" id="loadingDiv">
+                <img class="loadingGif" src="/images/loading.gif" alt="Loading">
+            </div>
+            <div id="successDiv" class="hidden">
+                <h1>Your message sent successfully</h1>
+            </div>
+            <div id="errorDiv" class="hidden">
+                <h1>Something went wrong...</h1>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer id="footer">
+            <p>Copyright 2020</p>
+            <p style="text-align: right">Dead Life Records</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            M.AutoInit();
+            emailjs.init("user_vputF5sqZHvvzak7wkT9M");
+        });
+
+        var Subs = []
+
+        $("#allSubsButt").on("click", function () {
+            $.get("/a6p6i6/a4l2l0", function (data) {
+                for (let i = 0; i < data.length; i++) {
+                    $("#subList").append(data[i].email + "<br>")
+                }
+            })
+        })
+
+        $("#sendButt").on("click", function () {
+            let title = $("#title").val();
+            let message = $("#message").val();
+            if (title === "" || message === "") {
+                alert("Fill out both inputs my dude")
+            } else {
+                $.get("/a6p6i6/a4l2l0", function (data) {
+                    for (let i = 0; i < data.length; i++) {
+                        Subs.push(data[i])
+                    }
+                }).then(
+                    function () {
+                        $("#messageDiv").addClass("hidden")
+                        $("#loadingDiv").removeClass("hidden")
+                        for (let i = 0; i < Subs.length; i++) {
+                            console.log(`THIS SUB: ${Subs[i].email.toString()}`)
+                            let templateParams = {
+                                type: "MESSAGE",
+                                to: Subs[i].email.toString(),
+                                title: title,
+                                message: message,
+                            }
+                            emailjs.send('default_service', 'dead_life_newsletter', templateParams)
+                                .then(function (response) {
+                                    console.log('Sucessful message send!')
+                                    $("#loadingDiv").addClass("hidden")
+                                    $("#successDiv").removeClass("hidden")
+                                }, function (error) {
+                                    console.log('FAILED...', error)
+                                    $("#loadingDiv").addClass("hidden")
+                                    $("#errorDiv").removeClass("hidden")
+                                });
+                        }
+                    }
+                )
+            }
+        })
+    </script>
+</body>
+
+</html>
