@@ -21,6 +21,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Email JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
     <style>
         /* === HIDDEN === */
         .hidden {
@@ -148,6 +150,19 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDDeRyv5sXu6zvVTb1YVWxCu7Es5MZ5eKg",
+            authDomain: "dlrpass.firebaseapp.com",
+            databaseURL: "https://dlrpass.firebaseio.com",
+            projectId: "dlrpass",
+            storageBucket: "dlrpass.appspot.com",
+            messagingSenderId: "441967770496",
+            appId: "1:441967770496:web:ad6babf93a13f2f9aa5f65"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
         $(document).ready(function () {
             M.AutoInit();

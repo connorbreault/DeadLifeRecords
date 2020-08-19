@@ -8,7 +8,6 @@ module.exports = function (app) {
         db.Sub.findAll({}).then(function (results) {
             res.json(results);
         });
-
     });
 
     // Subs post
