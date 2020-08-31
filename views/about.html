@@ -128,7 +128,9 @@
             width: auto;
             margin: 0;
             padding: 0;
-            background: url("/images/mainBG.jpg");
+            background: url("/images/mainBG.png");
+            background-attachment: scroll;
+            background-size: 100%;
             font-family: 'Oswald', sans-serif;
         }
 
@@ -224,6 +226,10 @@
             line-height: 35px
         }
 
+        #bottomPic {
+            display: none
+        }
+
         #footer {
             font-family: 'Oswald', sans-serif;
             color: white;
@@ -290,16 +296,12 @@
                 padding: 10px
             }
 
-            .content {
-                display: flex;
+            #topPic {
+                display: none
             }
 
-            .left {
-                width: 40%
-            }
-
-            .right {
-                width: 60%
+            #bottomPic {
+                display: inline-block
             }
 
             #footer {
@@ -451,20 +453,24 @@
             About us
         </h1>
         <div class="content">
-
-            <div class="left">
-                <amp-img src="/images/headEDIT.png" width="250" height="250" alt="Dead Life Staff" id="pic">
-                </amp-img>
-            </div>
-
-            <div class="right">
-                <p>
-                    Sacramento based record label Dead Life Records was founded in 2016. Focused on cultivating and
-                    assisting emerging artists within the metal community.
-
-                    By musicians, for musicians.
-                </p>
-            </div>
+            <amp-img src="/images/headEDIT.png" width="250" height="250" alt="Dead Life Staff" id="topPic">
+            </amp-img>
+            <p>
+                BY MUSICIANS. FOR MUSICIANS. Too many times the artist/musicians are exploited and used to someone
+                elses benefit. At Dead Life Records we understand the artist because we are artists ourselves. Our
+                mission is to establish a label for both underground and mainstream music for the masses. At Dead
+                Life we assist our artist with promoting, booking, management, merch making, and digital design. We
+                utlize designs for flyers, merch, and video production. We are here to help our bands to be more
+                efficient and productive by taking care of the business end of things so they can focus on the
+                music! Utilizing every skill our team has to offer to support our bands forward momentum 24/7. This
+                is our promise to you. We push our bands, our bands push us, it's like one big moshpit! This is what
+                makes us much more than a label. All of us here at Dead Life are one big fam damnly and we are not
+                your typical management team. We will push boundaries. We will work with you, not for you. We are
+                Dead Life Records. Welcome to the DEAD LIFE
+                🤘💀🤘
+            </p>
+            <amp-img src="/images/headEDIT.png" width="250" height="250" alt="Dead Life Staff" id="bottomPic">
+            </amp-img>
         </div>
     </div>
     <br>
