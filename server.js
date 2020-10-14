@@ -21,17 +21,6 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-if (process.env.NODE_ENV === "production") {
-  app.use((req, res, next) => {
-    if (req.header("x-forwarded-proto") !== "https") {
-      console.log("prod mode");
-      res.redirect(`https://${req.header("host")}${req.url}`);
-    } else {
-      next();
-    }
-  });
-}
-
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
