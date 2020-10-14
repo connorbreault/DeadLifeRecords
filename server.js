@@ -1,5 +1,7 @@
 require("dotenv").config();
 var express = require("express");
+var http = require('http');
+var enforce = require('express-sslify');
 var app = express();
 var db = require("./models");
 var PORT = process.env.PORT || 3000;
@@ -8,6 +10,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(enforce.HTTPS());
 
 // Routes
 require("./routes/htmlRoutes")(app);
@@ -21,20 +24,9 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-if (process.env.NODE_ENV === "production") {
-  app.use((req, res, next) => {
-    if (req.header("x-forwarded-proto") !== "https") {
-      console.log("prod mode");
-      res.redirect(`https://${req.header("host")}${req.url}`);
-    } else {
-      next();
-    }
-  });
-}
-
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+  http.createServer(app).listen(app.get('port'), function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
